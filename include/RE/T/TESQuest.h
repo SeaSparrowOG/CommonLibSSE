@@ -105,7 +105,7 @@ namespace RE
 		float                                      questDelayTime;  // 0
 		stl::enumeration<QuestFlag, std::uint16_t> flags;           // 4
 		std::int8_t                                priority;        // 6
-		stl::enumeration<Type, std::uint8_t>       questType;       // 7
+		std::uint8_t                               questType;       // 7
 	};
 	static_assert(sizeof(QUEST_DATA) == 0x8);
 
@@ -237,7 +237,7 @@ namespace RE
 		ObjectRefHandle&                         CreateRefHandleByAliasID(ObjectRefHandle& a_handle, std::uint32_t a_aliasID);
 		bool                                     EnsureQuestStarted(bool& a_result, bool a_startNow);
 		std::uint16_t                            GetCurrentStageID() const;
-		[[nodiscard]] constexpr QUEST_DATA::Type GetType() const noexcept { return data.questType.get(); }
+		//[[nodiscard]] constexpr QUEST_DATA::Type GetType() const noexcept { return data.questType.get(); }
 		bool                                     IsActive() const;
 		bool                                     IsCompleted() const;
 		bool                                     IsEnabled() const;
