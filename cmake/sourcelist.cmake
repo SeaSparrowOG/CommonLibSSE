@@ -1732,8 +1732,7 @@ set(SOURCES
 	include/SKSE/SKSE.h
 	include/SKSE/Trampoline.h
 	include/SKSE/Translation.h
-	include/SKSE/Version.h	
-	include/vr/OpenVR.h
+	include/SKSE/Version.h
 	src/RE/A/AIFormulas.cpp
 	src/RE/A/AIProcess.cpp
 	src/RE/A/ActiveEffect.cpp
