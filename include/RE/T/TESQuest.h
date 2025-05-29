@@ -18,6 +18,7 @@ namespace RE
 {
 	class BGSBaseAlias;
 	class QueuedPromoteQuestTask;
+	class BSTempEffect;
 
 	enum class QuestFlag
 	{
@@ -150,12 +151,14 @@ namespace RE
 		// members
 		std::uint64_t unk00;       // 00
 		TESCondition  conditions;  // 08
-		std::uint8_t  alias;       // 10
-		std::uint8_t  unk11;       // 11
-		std::uint16_t unk12;       // 12
-		std::uint32_t unk14;       // 14
+		std::uint32_t alias;       // 10
+		std::uint32_t unk14;       // 14 - padding?
+		// These two fields might be a structure of some sort - in ae, the function
+		// w/ id 30980 frees both of these fields, taking a pointer to the first.
+		BSTArray<BSTempEffect*> unk18;  // 18
+		BSTArray<BSTempEffect*> unk30;  // 30
 	};
-	static_assert(sizeof(TESQuestTarget) == 0x18);
+	static_assert(sizeof(TESQuestTarget) == 0x48);
 
 	class BGSQuestObjective
 	{
@@ -235,6 +238,7 @@ namespace RE
 		BGSStoryManagerTreeVisitor::VisitControl AcceptVisitor(BGSStoryManagerTreeVisitor& a_visitor) override;  // 3E
 
 		ObjectRefHandle&                         CreateRefHandleByAliasID(ObjectRefHandle& a_handle, std::uint32_t a_aliasID);
+		void                                     SetReferenceByAliasID(std::uint32_t a_aliasID, TESObjectREFR* a_ref);
 		bool                                     EnsureQuestStarted(bool& a_result, bool a_startNow);
 		std::uint16_t                            GetCurrentStageID() const;
 		[[nodiscard]] constexpr QUEST_DATA::Type GetType() const noexcept { return data.questType.get(); }
