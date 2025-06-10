@@ -1199,6 +1199,7 @@ set(SOURCES
 	include/RE/L/LooseFileLocation.h
 	include/RE/L/LooseFileStream.h
 	include/RE/L/LooseFileStreamBase.h
+	include/RE/M/MARKER_TYPE.h
 	include/RE/M/MagicCaster.h
 	include/RE/M/MagicFavorites.h
 	include/RE/M/MagicFormulas.h
@@ -1629,6 +1630,7 @@ set(SOURCES
 	include/RE/T/TargetValueModifierEffect.h
 	include/RE/T/TaskQueueInterface.h
 	include/RE/T/TelekinesisEffect.h
+	include/RE/T/TeleportPath.h
 	include/RE/T/TempEffectTraits.h
 	include/RE/T/TextureAddressModes.h
 	include/RE/T/TextureFileFormat.h
@@ -1847,6 +1849,7 @@ set(SOURCES
 	src/RE/E/ExtraHotkey.cpp
 	src/RE/E/ExtraLevCreaModifier.cpp
 	src/RE/E/ExtraLightData.cpp
+	src/RE/E/ExtraLinkedRef.cpp
 	src/RE/E/ExtraLock.cpp
 	src/RE/E/ExtraMissingLinkedRefIDs.cpp
 	src/RE/E/ExtraNorthRotation.cpp
