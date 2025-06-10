@@ -158,7 +158,7 @@ namespace RE
 		std::uint32_t unk14;         // 14
 		TeleportPath  teleportPath;  // 18
 	};
-	static_assert(sizeof(TESQuestTarget) == 0x18);
+	static_assert(sizeof(TESQuestTarget) == 0x60);
 
 	class BGSQuestObjective
 	{
