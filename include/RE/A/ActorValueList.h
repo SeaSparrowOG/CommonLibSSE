@@ -56,7 +56,7 @@ namespace std
 		template <class FormatContext>
 		auto format(RE::ActorValue a_actorValue, FormatContext& a_ctx)
 		{
-			return fmt::format_to(a_ctx.out(), "{}", ActorValueToString(a_actorValue));
+			return formatter<std::string_view, CharT>::format(ActorValueToString(a_actorValue), a_ctx);
 		}
 	};
 }

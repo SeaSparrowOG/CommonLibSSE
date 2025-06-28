@@ -551,6 +551,7 @@ set(SOURCES
 	include/RE/D/DisguiseEffect.h
 	include/RE/D/DispelEffect.h
 	include/RE/D/DoNothingUnhandledPolicy.h
+	include/RE/D/DragonCameraState.h
 	include/RE/D/DragonSoulsGained.h
 	include/RE/D/DropObjectFunctor.h
 	include/RE/D/DualValueModifierEffect.h
@@ -752,6 +753,7 @@ set(SOURCES
 	include/RE/F/FrenzyEffect.h
 	include/RE/F/FunctionArguments.h
 	include/RE/F/FunctionMessage.h
+	include/RE/F/FurnitureCameraState.h
 	include/RE/F/FxDelegate.h
 	include/RE/F/FxDelegateArgs.h
 	include/RE/F/FxDelegateHandler.h
@@ -922,6 +924,7 @@ set(SOURCES
 	include/RE/H/HUDChargeMeter.h
 	include/RE/H/HUDData.h
 	include/RE/H/HUDMenu.h
+	include/RE/H/HUDMessageTypes.h
 	include/RE/H/HUDMeter.h
 	include/RE/H/HUDNotifications.h
 	include/RE/H/HUDObject.h
@@ -985,6 +988,7 @@ set(SOURCES
 	include/RE/H/hkbEventBase.h
 	include/RE/H/hkbGenerator.h
 	include/RE/H/hkbNode.h
+	include/RE/H/hkbNodeInfo.h
 	include/RE/H/hkbProjectData.h
 	include/RE/H/hkbProjectStringData.h
 	include/RE/H/hkbRagdollDriver.h
@@ -1199,7 +1203,6 @@ set(SOURCES
 	include/RE/L/LooseFileLocation.h
 	include/RE/L/LooseFileStream.h
 	include/RE/L/LooseFileStreamBase.h
-	include/RE/M/MARKER_TYPE.h
 	include/RE/M/MagicCaster.h
 	include/RE/M/MagicFavorites.h
 	include/RE/M/MagicFormulas.h
@@ -1658,6 +1661,7 @@ set(SOURCES
 	include/RE/U/UserEventEnabled.h
 	include/RE/U/UserEvents.h
 	include/RE/V/VATS.h
+	include/RE/V/VATSCameraState.h
 	include/RE/V/VDescTable.h
 	include/RE/V/ValueAndConditionsEffect.h
 	include/RE/V/ValueModifierEffect.h
