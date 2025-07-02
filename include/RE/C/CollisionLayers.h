@@ -46,7 +46,7 @@ namespace RE
 		kCameraPick = 39,
 		kItemPick = 40,
 		kLineOfSight = 41,
-		kLOS = 41,
+		kLOS = kLineOfSight,
 		kPathPick = 42,
 		kCustomPick1 = 43,
 		kCustomPick2 = 44,
@@ -61,4 +61,50 @@ namespace RE
 		kUnused7 = 53,
 		kInvalid = 54  // Occurs at the start of "coc BleakFallsBarrow02"
 	};
+
+	std::string_view CollisionLayerToString(COL_LAYER a_layer) noexcept;
 }
+
+namespace std
+{
+	[[nodiscard]] inline std::string to_string(RE::COL_LAYER a_layer)
+	{
+		return RE::CollisionLayerToString(a_layer).data();
+	}
+}
+
+#ifdef FMT_VERSION
+namespace fmt
+{
+	template <>
+	struct formatter<RE::COL_LAYER>
+	{
+		template <class ParseContext>
+		constexpr auto parse(ParseContext& a_ctx)
+		{
+			return a_ctx.begin();
+		}
+
+		template <class FormatContext>
+		auto format(const RE::COL_LAYER& a_layer, FormatContext& a_ctx) const
+		{
+			return fmt::format_to(a_ctx.out(), "{}", RE::CollisionLayerToString(a_layer));
+		}
+	};
+}
+#endif
+
+#ifdef __cpp_lib_format
+namespace std
+{
+	template <class CharT>
+	struct formatter<RE::COL_LAYER, CharT> : std::formatter<std::string_view, CharT>
+	{
+		template <class FormatContext>
+		auto format(RE::COL_LAYER a_layer, FormatContext& a_ctx) const
+		{
+			return formatter<std::string_view, CharT>::format(RE::CollisionLayerToString(a_layer), a_ctx);
+		}
+	};
+}
+#endif

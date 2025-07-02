@@ -42,7 +42,7 @@ namespace RE
 		kBoulderSmall = 1550912982,
 		kSnowStairs = 1560365355,
 		kStoneHeavy = 1570821952,
-		kDragonSkeleton = 1574477864,
+		kCharacterBumper = 1574477864,
 		kTrap = 1591009235,
 		kBowsStaves = 1607128641,
 		kAlduin = 1730220269,
@@ -134,7 +134,7 @@ namespace std
 	struct formatter<RE::MATERIAL_ID, CharT> : std::formatter<std::string_view, CharT>
 	{
 		template <class FormatContext>
-		auto format(RE::MATERIAL_ID a_materialID, FormatContext& a_ctx)
+		auto format(RE::MATERIAL_ID a_materialID, FormatContext& a_ctx) const
 		{
 			return formatter<std::string_view, CharT>::format(RE::MaterialIDToString(a_materialID), a_ctx);
 		}
